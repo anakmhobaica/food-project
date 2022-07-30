@@ -1,0 +1,229 @@
+body {
+    background-color: whitesmoke;
+}
+
+.logo {
+    width: 3cm;
+    height: 3cm;
+    display: block;
+    margin: auto; 
+}
+
+nav {
+    background-color: #e01304;
+    width: 100%;
+    display: flex;
+    justify-content: space-between; 
+}
+
+div.options {
+    display: flex;
+    align-items: center;
+}
+
+div.barra {
+    position:relative;
+}
+
+#u01 {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #e01304;
+}
+
+.barra li {
+    position: bottom;
+    float: left;
+    text-align: center; 
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+}
+
+.field>input[type=text],
+.field>button {
+  display:block;
+  font:1em 'Montserrat Alternates';
+}
+
+.field {
+    display:flex;
+    position:relative;
+    margin:2em;
+    margin-right: 45px;
+    width:20%;
+    flex-direction:row;
+  }
+
+.field>input[type=text] {
+    flex:1;
+    padding:0.6em;
+    border:0.2em solid #700a03;
+  }
+
+.field>button {
+    padding:0.6em 0.8em;
+    background-color:#700a03;
+    color:white;
+    border:none;
+  }
+
+li a, .dropbtn {
+    display: inline-block;
+    text-align: center;
+    text-decoration: none;
+    color: white;
+    padding: 14px 16px;
+    cursor: pointer;
+}
+
+li a:hover, .dropdown1:hover .dropbtn{
+    background-color: #b30e02;
+}
+
+li.dropdown1 {
+    display: inline-block;
+}
+
+.dropdown1-content {
+    display: none;
+    position: absolute;
+    background-color: #262424;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown1-content a {
+    color: white;
+    padding: 10px 14px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+
+.dropdown1-content a:hover {background-color: #cc4f45;}
+
+.dropdown1:hover .dropdown1-content {
+    display: block;
+}
+
+.column1 {
+    float: left;
+    padding: 15px;
+    font-family: 'Kanit', sans-serif;;
+}
+
+.column2 {
+    width: 800px;
+    float: left;
+    padding: 15px;
+}
+
+.column3 {
+    background-color: #fce3e3;
+    float: left;
+    width: 950px;
+    padding: 15px;
+    font-family: 'Kanit', sans-serif;;
+}
+
+.column4 {
+    background-color: #ffadad;
+    width: 350px;
+    float: left;
+    padding: 15px;
+}
+
+.content {
+    content: "";
+    display: flex;
+    clear: both;
+    margin-left: 120px;
+    margin-right: 120px;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: auto;
+}
+
+.button1 {
+    float: right;
+    background-color: whitesmoke;
+    color: #e01304;
+    border: 2px solid #e01304;
+    width: 100px;
+    height: 50px;
+    cursor: pointer;
+}
+
+.button1:hover {
+    color: #b30e02;
+    border: 2px solid #b30e02;
+    text-decoration: underline;
+}
+
+.link1 {
+    float: right;
+    text-decoration: none;
+    color: #e01304;
+    cursor: pointer;
+}
+
+.link1:hover {
+    text-decoration: underline;
+    color: #b30e02;
+}
+
+.textc2 {
+    color: #e01304;
+}
+
+.info {
+    width: 750px;
+    background-color: #fce3e3;
+    padding: 7px;
+}
+
+.ingredientes {
+    background-color: #fc6d6d;
+    border: 1px solid #fc6d6d;
+    padding: 7px;
+    width: 500px;
+    position: relative;
+}
+
+.tip {
+    font-style: italic;
+}
+
+.sidebar h3{
+    color: #b30c0c;
+}
+
+.sidebar{
+    cursor: pointer;
+}
+
+.sidebar:hover{
+    opacity: 0.7;
+    color: #b30e02;
+}
+
+.elementsidebar {
+    text-decoration: none;
+    color: black;
+}
+
+div.fit {
+    width: 350px;
+    background-color: white;
+    padding: 0.5cm;
+}
+
+
+
