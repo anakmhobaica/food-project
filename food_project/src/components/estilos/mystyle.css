@@ -44,7 +44,8 @@ div.barra {
 .field>input[type=text],
 .field>button {
   display:block;
-  font:1em 'Montserrat Alternates';
+  /* font:1em 'Montserrat Alternates'; */
+  cursor: pointer;
 }
 
 .field {
@@ -54,6 +55,7 @@ div.barra {
     margin-right: 45px;
     width:20%;
     flex-direction:row;
+    justify-content: end;
   }
 
 .field>input[type=text] {
@@ -64,7 +66,7 @@ div.barra {
 
 .field>button {
     padding:0.6em 0.8em;
-    background-color:#700a03;
+    background-color:#b30e02;
     color:white;
     border:none;
   }

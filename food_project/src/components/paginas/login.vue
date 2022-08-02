@@ -4,26 +4,66 @@
         <div class="main">  	
             <input type="checkbox" id="chk" aria-hidden="true">
                 <div class="signup">
-                    <form>
+                    <form v-on:submit.prevent="registrarse">
                         <label for="chk" aria-hidden="true">Registro</label>
-                        <input type="text" name="txt" placeholder="Nombre de usuario" required="">
-                        <input type="email" name="email" placeholder="Correo electrónico" required="">
-                        <input type="password" name="pswd" placeholder="Contraseña" required="">
-                        <button>Registrarse</button>
+                        <input type="text" name="nombre_usuario" v-model="username" placeholder="Nombre de usuario" required="">
+                        <input type="email" name="email" v-model="email" placeholder="Correo electrónico" required="">
+                        <input type="password" name="pswd" v-model="pswd" placeholder="Contraseña" required="">
+                        <button type="submit">Registrarse</button>
                     </form>
+					<p v-if="respuesta.codigo == 400" style="color:red; text-align: center; padding: 5px;">{{ respuesta.mensaje }}</p>
+					<p v-else-if="respuesta.codigo == 401" style="color:red; text-align: center; padding: 0 5px 0;">{{ respuesta.mensaje }}</p>
                 </div>
                 <div class="login">
-                    <form>
+                    <form v-on:submit.prevent="ingresar">
                         <label for="chk" aria-hidden="true">Inicio de Sesión</label>
-                        <input type="email" name="email" placeholder="Correo electrónico" required="">
-                        <input type="password" name="pswd" placeholder="Contraseña" required="">
-                        <button>Acceder</button>
+                        <input type="text" name="nombre_usuario" v-model="username" placeholder="Nombre de usuario" required="">
+                        <input type="password" name="pswd" v-model="pswd" placeholder="Contraseña" required="">
+                        <button type="submit">Acceder</button>
                     </form>
+					<p v-if="respuesta.codigo == 403" style="color:red; text-align: center;">{{ respuesta.mensaje }}</p>
                 </div>
         </div>
     </div>
 </body>
 </template>
+
+<script>
+	import axios from "axios";
+	export default {
+		data() {
+			return {
+				respuesta: [],
+			}
+		},
+		methods: {
+			ingresar(){
+				axios.post('//localhost:5000/login', {
+					nombre: this.username, contrasena: this.pswd
+				}).then(response => {
+					this.respuesta = response.data;
+					console.log(response.data.codigo);
+					if (response.data.codigo === 200){
+							localStorage.setItem('user', JSON.stringify(response.data.user));
+							window.location.href = "/";
+						}
+				})
+			},
+			registrarse(){
+				axios.post('//localhost:5000/registro', {
+					nombre: this.username, contrasena: this.pswd, correo: this.email, tipo_usuario: "user"
+				}).then(response => {
+					this.respuesta = response.data;
+					console.log(this.respuesta);
+					if (response.data.codigo === 201){
+							localStorage.setItem('user', JSON.stringify(response.data.user));
+							window.location.href = "/";
+						}
+				})
+			},
+		}
+	}
+</script>
 
 <style scoped>
 @import url('https://fonts.googleapis.com/css2?family=Jost&display=swap');

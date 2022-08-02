@@ -4,7 +4,8 @@ import Admin from '../components/paginas/admin.vue';
 import Recetas from '../components/paginas/recetas.vue';
 import Curiosidades from '../components/paginas/curiosidades.vue';
 import Receta from '../components/paginaReceta.vue';
-import Login from '../components/paginas/login.vue'
+import Login from '../components/paginas/login.vue';
+import Agregar from '../components/paginas/agregar.vue';
 
 const routes = [
   {
@@ -36,6 +37,11 @@ const routes = [
     path: '/login',
     name: 'Login',
     component: Login
+  },
+  {
+    path: '/admin-agregar',
+    name: 'Agregar',
+    component: Agregar
   },
   {
     path: '/about',
