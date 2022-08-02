@@ -130,7 +130,10 @@ def registro():
             else:
                 cursor.execute('INSERT INTO usuarios (nombre, contrasena, correo, tipo_usuario) VALUES (%s, %s, %s, %s)', (json['nombre'], json['contrasena'], json['correo'], json['tipo_usuario']))
                 DB.commit()
-                return jsonify({'codigo': 201, 'mensaje': "Bienvenido!", 'user':dict(usuario)})
+                cursor.execute('SELECT * FROM usuarios WHERE nombre = %s',(json['nombre'],))
+                user = cursor.fetchone()
+                user = dict(cursor)
+                return jsonify({'codigo': 201, 'mensaje': "Bienvenido!", 'user':user})
 
 @app.route('/login', methods=['GET', 'POST'])
 def login():
